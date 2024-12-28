@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/connoromalley/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -76,10 +76,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-
-export PATH=/Applications/Julia-1.7.app/Contents/Resources/julia/bin/:$PATH
-export PATH=~/.emacs.d/bin:$PATH
-
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -104,11 +100,8 @@ export PATH=~/.emacs.d/bin:$PATH
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Zoxide Configuration
-eval "$(zoxide init zsh --cmd cd)"
 
-# opam configuration
-[[ ! -r /Users/connoromalley/.opam/opam-init/init.zsh ]] || source /Users/connoromalley/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+eval "$(zoxide init --cmd cd zsh)"
 
+
+[ -f "/Users/connoromalley/.ghcup/env" ] && . "/Users/connoromalley/.ghcup/env" # ghcup-env

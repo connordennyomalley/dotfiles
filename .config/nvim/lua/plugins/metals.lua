@@ -1,5 +1,0 @@
-return {
-  {
-    "scalameta/nvim-metals",
-  },
-}
