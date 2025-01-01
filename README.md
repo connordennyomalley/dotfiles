@@ -10,3 +10,14 @@ To pickup changes for a package:
 stow zsh --adopt
 ```
 
+## TODO
+In order of priority:
+- [ ] Organise shortcuts
+    - [ ] Gitsigns
+    - [ ] Copilot chat
+    - [ ] LSP
+    - [ ] Whichkey
+- [ ] Organise plugins into folders and give languages seperate folders.
+    - [ ] Lua
+    - [ ] Scala
+- [ ] Support Java
