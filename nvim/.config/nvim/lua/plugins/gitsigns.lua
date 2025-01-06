@@ -5,11 +5,11 @@ return {
       -- TODO: Set the keymaps for a buffer
       local gitsigns = require("gitsigns")
 
-      -- local function map(mode, l, r, opts)
-      --   opts = opts or {}
-      --   opts.buffer = bufnr
-      --   vim.keymap.set(mode, l, r, opts)
-      -- end
+      local function map(mode, l, r, opts)
+        opts = opts or {}
+        opts.buffer = bufnr
+        vim.keymap.set(mode, l, r, opts)
+      end
 
       -- Navigation
       -- map("n", "]c", function()
@@ -29,8 +29,8 @@ return {
       -- end)
       --
       -- -- Actions
-      -- map("n", "<leader>hs", gitsigns.stage_hunk)
-      -- map("n", "<leader>hr", gitsigns.reset_hunk)
+      map("n", "<leader>ghs", gitsigns.stage_hunk)
+      map("n", "<leader>ghr", gitsigns.reset_hunk)
       -- map("v", "<leader>hs", function()
       --   gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
       -- end)

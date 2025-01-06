@@ -179,6 +179,6 @@ copilotline-explain-buffer() {
   fi
 }
 
-bindkey '^e' copilotline-explain-buffer
+bindkey '^x' copilotline-explain-buffer
 
 zle -N copilotline-explain-buffer
