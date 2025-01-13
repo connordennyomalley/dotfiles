@@ -11,6 +11,9 @@ return {
     icons = {
       separator = "→",
     },
+    spec = {
+      { "<leader>f", group = "file" },
+    },
   },
   keys = {
     {

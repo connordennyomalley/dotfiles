@@ -5,11 +5,6 @@ To install a package:
 stow zsh
 ```
 
-To pickup changes for a package:
-```bash
-stow zsh --adopt
-```
-
 ## TODO
 In order of priority:
 - [ ] Organise shortcuts
