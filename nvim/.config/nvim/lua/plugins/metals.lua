@@ -13,15 +13,6 @@ return {
         excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
       }
 
-      -- *READ THIS*
-      -- I *highly* recommend setting statusBarProvider to either "off" or "on"
-      --
-      -- "off" will enable LSP progress notifications by Metals and you'll need
-      -- to ensure you have a plugin like fidget.nvim installed to handle them.
-      --
-      -- "on" will enable the custom Metals status extension and you *have* to have
-      -- a have settings to capture this in your statusline or else you'll not see
-      -- any messages from metals. There is more info in the help docs about this
       metals_config.init_options.statusBarProvider = "on"
 
       -- Example if you are using cmp how to make sure the correct capabilities for snippets are set
@@ -40,38 +31,24 @@ return {
         map("n", "gds", vim.lsp.buf.document_symbol)
         map("n", "gws", vim.lsp.buf.workspace_symbol)
         map("n", "<leader>cl", vim.lsp.codelens.run)
-        map("n", "<leader>sh", vim.lsp.buf.signature_help)
-        map("n", "<leader>rn", vim.lsp.buf.rename)
-        map("n", "<leader>f", vim.lsp.buf.format)
+        map("n", "<leader>cs", vim.lsp.buf.signature_help)
+        map("n", "<leader>cr", vim.lsp.buf.rename)
+        map("n", "<leader>cf", vim.lsp.buf.format)
         map("n", "<leader>ca", vim.lsp.buf.code_action)
 
-        map("n", "<leader>ws", function()
+        map("n", "<leader>cmw", function()
           require("metals").hover_worksheet()
-        end)
+        end, { desc = "Hover Worksheet" })
 
-        -- all workspace diagnostics
-        map("n", "<leader>aa", vim.diagnostic.setqflist)
-
-        -- all workspace errors
-        map("n", "<leader>ae", function()
+        -- Diagnostics
+        map("n", "<leader>cda", vim.diagnostic.setqflist, { desc = "All Diagnostics" })
+        map("n", "<leader>cde", function()
           vim.diagnostic.setqflist({ severity = "E" })
-        end)
-
-        -- all workspace warnings
+        end, { desc = "Workspace Errors" })
         map("n", "<leader>aw", function()
           vim.diagnostic.setqflist({ severity = "W" })
-        end)
-
-        -- buffer diagnostics only
-        map("n", "<leader>d", vim.diagnostic.setloclist)
-
-        map("n", "[c", function()
-          vim.diagnostic.goto_prev({ wrap = false })
-        end)
-
-        map("n", "]c", function()
-          vim.diagnostic.goto_next({ wrap = false })
-        end)
+        end, { desc = "Workspace Warnings" })
+        map("n", "<leader>cdb", vim.diagnostic.setloclist, { desc = "Buffer Diagnostics" })
 
         -- Example mappings for usage with nvim-dap. If you don't use that, you can
         -- skip these

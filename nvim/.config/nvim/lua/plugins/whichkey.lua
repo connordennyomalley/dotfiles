@@ -12,7 +12,14 @@ return {
       separator = "→",
     },
     spec = {
-      { "<leader>f", group = "file" },
+      { "<leader>f", group = "File" },
+      { "<leader>s", group = "Search" },
+      { "<leader>g", group = "Git" },
+      { "<leader>b", group = "Buffer" },
+      { "<leader>w", group = "Window" },
+      { "<leader><tab>", group = "Tab" },
+      { "<leader>u", group = "UI" },
+      { "<leader>?", group = "Buffer local" },
     },
   },
   keys = {

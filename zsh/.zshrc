@@ -100,6 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias s="kitten ssh"
+alias lg="lazygit"
 
 eval "$(zoxide init --cmd cd zsh)"
 
