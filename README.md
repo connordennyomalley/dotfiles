@@ -13,7 +13,7 @@ Extensions:
 
 ### Hide the tab bar
 1. Setup [FirefoxCSS](https://github.com/FirefoxCSS-Store/FirefoxCSS-Store.github.io/blob/main/README.md#generic-installation).
-2. Put this in ${PROFILE}/chrome/userChrome.css (create the file if it doesn't already exist):
+2. Put this in `${PROFILE}/chrome/userChrome.css` (create the file if it doesn't already exist):
 ```
 #TabsToolbar
 {
@@ -22,11 +22,10 @@ Extensions:
 ```
 
 ## TODO
-In order of priority:
 - [ ] Organise shortcuts
     - [ ] Gitsigns
     - [ ] Copilot chat
-    - [ ] LSP
+    - [/] LSP
     - [ ] Whichkey
 - [ ] Organise plugins into folders and give languages seperate folders.
     - [ ] Lua
