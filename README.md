@@ -21,13 +21,3 @@ Extensions:
 }
 ```
 
-## TODO
-- [ ] Organise shortcuts
-    - [ ] Gitsigns
-    - [ ] Copilot chat
-    - [/] LSP
-    - [ ] Whichkey
-- [ ] Organise plugins into folders and give languages seperate folders.
-    - [ ] Lua
-    - [ ] Scala
-- [ ] Support Java
