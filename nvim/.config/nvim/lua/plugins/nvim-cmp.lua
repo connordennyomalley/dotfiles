@@ -33,6 +33,7 @@ return {
       }),
       sources = cmp.config.sources({
         { name = "copilot" },
+        { name = "metals" },
         { name = "nvim_lsp" },
         -- { name = "vsnip" }, -- For vsnip users.
         { name = "luasnip" }, -- For luasnip users.

@@ -3,6 +3,7 @@ return {
     "scalameta/nvim-metals",
     dependencies = {
       "nvim-lua/plenary.nvim",
+      "telescope.nvim",
     },
     lazy = false,
     ft = { "scala", "sbt", "java" },
@@ -21,9 +22,10 @@ return {
 
       metals_config.on_attach = function(client, bufnr)
         local map = vim.keymap.set
+        local telescopePickers = require("telescope.builtin")
 
         -- LSP mappings
-        map("n", "gd", vim.lsp.buf.definition)
+        map("n", "gd", telescopePickers.lsp_definitions)
         map("n", "K", vim.lsp.buf.hover)
         map("n", "gi", vim.lsp.buf.implementation)
         map("n", "gr", vim.lsp.buf.references)
@@ -40,6 +42,7 @@ return {
         end, { desc = "Hover Worksheet" })
 
         -- Diagnostics
+        map("n", "<leader>cdd", vim.diagnostic.goto_next, { desc = "Next Diagnostic" })
         map("n", "<leader>cda", vim.diagnostic.setqflist, { desc = "All Diagnostics" })
         map("n", "<leader>cde", function()
           vim.diagnostic.setqflist({ severity = "E" })
