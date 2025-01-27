@@ -16,6 +16,13 @@ return {
           stdin = true,
         }
       end,
+      scala = function()
+        return {
+          exe = "scalafmt",
+          args = { "--stdin" },
+          stdin = true,
+        }
+      end,
     },
   },
 }

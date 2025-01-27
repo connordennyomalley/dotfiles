@@ -27,6 +27,7 @@
   "nvim-lspconfig": { "branch": "master", "commit": "8b15a1a597a59f4f5306fad9adfe99454feab743" },
   "nvim-metals": { "branch": "main", "commit": "e6b02c99161b43c67cfe1d6e5f9a9b9a0bb4701c" },
   "nvim-web-devicons": { "branch": "master", "commit": "4adeeaa7a32d46cf3b5833341358c797304f950a" },
+  "oil.nvim": { "branch": "master", "commit": "a3fc6623fa9a3c49ed94b5dbe9f181fbd2e93e64" },
   "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
   "snacks.nvim": { "branch": "main", "commit": "d312053f78b4fb55523def179ac502438dd93193" },
   "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
