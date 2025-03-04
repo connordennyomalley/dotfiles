@@ -6,7 +6,6 @@ return {
       "telescope.nvim",
     },
     lazy = false,
-    ft = { "scala", "sbt", "java" },
     opts = function()
       local metals_config = require("metals").bare_config()
 
@@ -20,37 +19,13 @@ return {
       -- Example if you are using cmp how to make sure the correct capabilities for snippets are set
       metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      metals_config.on_attach = function(client, bufnr)
+      metals_config.on_attach = function(ev)
         local map = vim.keymap.set
-        local telescopePickers = require("telescope.builtin")
 
-        -- LSP mappings
-        map("n", "gd", telescopePickers.lsp_definitions)
-        map("n", "K", vim.lsp.buf.hover)
-        map("n", "gi", vim.lsp.buf.implementation)
-        map("n", "gr", vim.lsp.buf.references)
-        map("n", "gds", vim.lsp.buf.document_symbol)
-        map("n", "gws", vim.lsp.buf.workspace_symbol)
-        map("n", "<leader>cl", vim.lsp.codelens.run)
-        map("n", "<leader>cs", vim.lsp.buf.signature_help)
-        map("n", "<leader>cr", vim.lsp.buf.rename)
-        map("n", "<leader>cf", vim.lsp.buf.format)
-        map("n", "<leader>ca", vim.lsp.buf.code_action)
-
+        -- Only set custom metals features, the rest is handled by the normal lsp on_attach
         map("n", "<leader>cmw", function()
           require("metals").hover_worksheet()
         end, { desc = "Hover Worksheet" })
-
-        -- Diagnostics
-        map("n", "<leader>cdd", vim.diagnostic.goto_next, { desc = "Next Diagnostic" })
-        map("n", "<leader>cda", vim.diagnostic.setqflist, { desc = "All Diagnostics" })
-        map("n", "<leader>cde", function()
-          vim.diagnostic.setqflist({ severity = "E" })
-        end, { desc = "Workspace Errors" })
-        map("n", "<leader>aw", function()
-          vim.diagnostic.setqflist({ severity = "W" })
-        end, { desc = "Workspace Warnings" })
-        map("n", "<leader>cdb", vim.diagnostic.setloclist, { desc = "Buffer Diagnostics" })
       end
 
       return metals_config

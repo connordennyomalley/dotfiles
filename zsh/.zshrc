@@ -78,6 +78,10 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 export EDITOR="nvim"
+# For Neovide in case using
+export NEOVIDE_TITLE_HIDDEN=1
+export NEOVIDE_FRAME=buttonless
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
