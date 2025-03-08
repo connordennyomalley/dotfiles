@@ -35,6 +35,22 @@ vim.api.nvim_create_autocmd("LspAttach", {
   callback = require("bits.lsp").on_attach,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "tex",
+  callback = function(ev)
+    vim.lsp.start({
+      cmd = { "texlab" },
+      filetypes = { "tex" },
+    })
+  end,
+})
+
+-- vim.api.nvim_create_autocmd("LspProgress", {
+--   callback = function(ev)
+--
+--   end,
+-- })
+
 -- Formatting on save
 local formatter_group = vim.api.nvim_create_augroup("__formatter__", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePost", {
