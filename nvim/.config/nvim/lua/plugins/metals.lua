@@ -6,6 +6,7 @@ return {
       "telescope.nvim",
     },
     lazy = false,
+    ft = { "scala" },
     opts = function()
       local metals_config = require("metals").bare_config()
 
