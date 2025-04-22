@@ -45,14 +45,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- Java!
-vim.api.nvim_create_autocmd("FileType", {
-  callback = require("jdtls").start_or_attach({
-    cmd = { "jdtls" },
-    root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1]),
-  }),
-})
-
 -- vim.api.nvim_create_autocmd("LspProgress", {
 --   callback = function(ev)
 --
