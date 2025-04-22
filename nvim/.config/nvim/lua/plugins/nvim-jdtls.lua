@@ -1,12 +1,16 @@
 return {
   "mfussenegger/nvim-jdtls",
-  opts = function()
+  lazy = false,
+  config = function()
     vim.api.nvim_create_autocmd("FileType", {
-      callback = require("jdtls").start_or_attach({
-        cmd = { "jdtls" },
-        root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1]),
-      }),
+      pattern = "java",
+      callback = function()
+        local config = {
+          cmd = { "jdtls" },
+          root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1]),
+        }
+        require("jdtls").start_or_attach(config)
+      end,
     })
-    return {}
   end,
 }
