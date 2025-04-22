@@ -90,8 +90,11 @@
 
 (defun org-capture-inbox ()
      (interactive)
-     (call-interactively 'org-store-link)
      (org-capture nil "i"))
+
 (evil-define-key 'normal 'global (kbd "<leader>oci") 'org-capture-inbox)
 (evil-define-key 'normal 'global (kbd "<leader>occ") 'org-capture)
+(evil-define-key 'normal 'global (kbd "<leader>or") 'org-refile)
+
+
 ;; --------------------
