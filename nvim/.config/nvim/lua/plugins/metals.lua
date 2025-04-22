@@ -4,6 +4,7 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "telescope.nvim",
+      "folke/which-key.nvim",
     },
     lazy = false,
     ft = { "scala" },
@@ -27,6 +28,10 @@ return {
         map("n", "<leader>cmw", function()
           require("metals").hover_worksheet()
         end, { desc = "Hover Worksheet" })
+
+        map("n", "<leader>cmm", function()
+          require("telescope").extensions.metals.commands()
+        end, { desc = "Metals Commands" })
       end
 
       return metals_config

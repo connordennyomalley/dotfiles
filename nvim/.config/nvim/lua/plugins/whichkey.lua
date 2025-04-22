@@ -20,6 +20,7 @@ return {
       { "<leader><tab>", group = "Tab" },
       { "<leader>u", group = "UI" },
       { "<leader>?", group = "Buffer local" },
+      { "<leader>cm", group = "Metals" },
     },
   },
   keys = {
