@@ -12,6 +12,7 @@ map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = tru
 
 -- Neotree
 map("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "🔭 Explore" })
+map("n", "<leader>o", "<cmd>Oil<cr>", { desc = "Open in Oil" })
 
 -- Move to window using the <ctrl> hjkl keys
 map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })

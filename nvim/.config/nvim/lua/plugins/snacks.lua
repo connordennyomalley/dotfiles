@@ -30,7 +30,7 @@ return {
         ---@type snacks.dashboard.Item[]
         keys = {
           { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
-          { icon = "󱓦 ", key = "e", desc = "Edit Dir in Oil", action = ":Oil" },
+          { icon = "󱓦 ", key = "o", desc = "Edit Dir in Oil", action = ":Oil" },
           { icon = " ", key = "g", desc = "Magit 🪄", action = ":Neogit" },
           { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
           { icon = " ", key = "s", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },

@@ -2,7 +2,7 @@ return {
   "nvim-treesitter/nvim-treesitter",
   run = ":TSUpdate",
   opts = {
-    ensure_installed = { "scala", "json", "lua", "java" },
+    ensure_installed = { "scala", "json", "lua", "java", "html", "proto" },
     highlight = {
       enable = true,
     },

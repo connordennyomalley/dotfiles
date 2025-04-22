@@ -35,6 +35,18 @@ vim.api.nvim_create_autocmd("LspAttach", {
   callback = require("bits.lsp").on_attach,
 })
 
+-- TS!
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "typescript",
+  callback = function(ev)
+    vim.lsp.start({
+      cmd = { "typescript-language-server", "--stdio" },
+      filetypes = { "typescript", "typescriptreact", "ts" },
+      root_markers = { "package.json", "tsconfig.json", "jsconfig.json", ".git" },
+    })
+  end,
+})
+
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "tex",
   callback = function(ev)
