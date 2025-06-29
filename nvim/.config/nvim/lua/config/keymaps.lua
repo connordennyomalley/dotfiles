@@ -26,13 +26,13 @@ map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
 map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
 map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
--- Move Lines
-map("n", "<A-j>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down" })
-map("n", "<A-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Move Up" })
-map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
-map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
-map("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
-map("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
+-- Move Lines up and down
+map("n", "<S-j>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down" })
+map("n", "<S-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Move Up" })
+map("i", "<S-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
+map("i", "<S-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
+map("v", "<S-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
+map("v", "<S-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
 
 -- Buffers
 map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
@@ -101,8 +101,8 @@ map("n", "gcO", "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Commen
 -- lazy package manager
 map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
-map("n", "<leader>xl", "<cmd>lopen<cr>", { desc = "Location List" })
-map("n", "<leader>xq", "<cmd>copen<cr>", { desc = "Quickfix List" })
+map("n", "<leader>cl", "<cmd>lopen<cr>", { desc = "Location List" })
+map("n", "<leader>cq", "<cmd>copen<cr>", { desc = "Quickfix List" })
 
 map("n", "[q", vim.cmd.cprev, { desc = "Previous Quickfix" })
 map("n", "]q", vim.cmd.cnext, { desc = "Next Quickfix" })
@@ -161,6 +161,7 @@ map("n", "<leader>uI", "<cmd>InspectTree<cr>", { desc = "Inspect Tree" })
 
 -- Windows
 map("n", "<leader>w", "<c-w>", { desc = "Windows", remap = true })
+map("n", "<leader>wb", "<c-w>=", { desc = "Windows Balance", remap = true })
 map("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })
 map("n", "<leader>|", "<C-W>v", { desc = "Split Window Right", remap = true })
 map("n", "<leader>wd", "<C-W>c", { desc = "Delete Window", remap = true })
@@ -185,3 +186,9 @@ if vim.fn.has("nvim-0.11") == 0 then
     return vim.snippet.active({ direction = -1 }) and "<cmd>lua vim.snippet.jump(-1)<cr>" or "<S-Tab>"
   end, { expr = true, desc = "Jump Previous" })
 end
+
+-- AI
+map("n", "<leader>caa", "<cmd>CopilotChatToggle<cr>", { desc = "Copilot Chat" })
+map("n", "<leader>cae", "<cmd>CopilotChatExplain<cr>", { desc = "Copilot Explain" })
+map("n", "<leader>cao", "<cmd>CopilotChatOptimize<cr>", { desc = "Copilot Optimize" })
+map("n", "<leader>car", "<cmd>CopilotChatReview<cr>", { desc = "Copilot Review" })
